@@ -21,6 +21,8 @@ export const GlobalStyles = createGlobalStyle`
   html {
     min-height: 60rem;
     max-height: 60rem;
+    min-width: 50rem;
+    max-width: 50rem;
   }
   body {
     margin: 0;
