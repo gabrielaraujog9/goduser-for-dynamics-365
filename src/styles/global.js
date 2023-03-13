@@ -21,8 +21,6 @@ export const GlobalStyles = createGlobalStyle`
   html {
     min-height: 60rem;
     max-height: 60rem;
-    min-width: 50rem;
-    max-width: 50rem;
   }
   body {
     margin: 0;
@@ -60,12 +58,15 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const PagesWrapper = styled.div`
-  width: 100%;
+  width: 50rem;
   height: 100%;
   position: relative;
   overflow: hidden;
   > main {
     width: 100%;
     height: 100%;
+  }
+  > header {
+    width: 100%;
   }
 `;

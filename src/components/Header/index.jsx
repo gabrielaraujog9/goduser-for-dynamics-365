@@ -1,31 +1,52 @@
-import { Container } from "./styles";
+import { Container, Menu } from "./styles";
 import { MdMenu, MdSearch, MdClose } from 'react-icons/md';
 import "../../styles/style.css"
-import { Menu } from "../Menu";
 import { IconDiv } from "../IconDiv";
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 
 export function Header(){
-  const [display, setDisplay] = useState("none")
+  const [open, setOpen] = useState(false)
   const [classIconMenu, setClassIconMenu] = useState("iconShow")
   const [classIconClose, setClassIconClose] = useState("iconHidden")
   const openAndClose = () => {
     
-    if(display === "none" && classIconClose === "iconHidden" && classIconMenu === "iconShow"){
-      setDisplay("block");
+    if(!open){
+      setOpen(true);
       setClassIconMenu("iconHidden")
       setClassIconClose("iconShow")
     }
-    if(display === "block" && classIconClose === "iconShow" && classIconMenu === "iconHidden"){
-      setDisplay("none");
+    if(open){
+      setOpen(false);
       setClassIconMenu("iconShow")
       setClassIconClose("iconHidden")
     }
+    
+  }
+
+  const navigate = useNavigate()
+
+  function handleFormulario(){
+    navigate("/")
+    openAndClose()
+  }
+  function handleNavegacao(){
+    navigate("/navegacao")
+    openAndClose()
   }
   return(
     <Container>
-      <Menu display={display}/>
+      <Menu open={open}>
+        <ul>
+          <li onClick={handleFormulario}>Formulário</li>
+          <li onClick={handleNavegacao}>Navegação</li>
+          <li>PowerApps</li>
+          <li>Fluxos</li>
+          <li>Registros</li>
+          <li>Impersonar</li>
+        </ul>
+      </Menu> 
       <IconDiv onClick={openAndClose}><MdClose className={"iconMenu " + classIconClose}/><MdMenu className={"iconMenu " + classIconMenu}/></IconDiv>
       <IconDiv><MdSearch className="iconMenu"/></IconDiv>
     </Container>
