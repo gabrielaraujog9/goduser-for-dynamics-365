@@ -6,5 +6,20 @@
   "action": {
     "default_popup": "index.html",
     "default_title": "Goduser For Dynamics 365"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "/scripts/app.js"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "*://*.dynamics.com/api/*",
+    "*://*.dynamics.com.mcas.ms/*"
+  ]
 }
