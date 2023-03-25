@@ -1,6 +1,7 @@
 var formContext;
-window.addEventListener('message',function (event){
+window.addEventListener('message',async function (event){
     formContext = event.source.Xrm?.Page;
-    console.log(formContext);
-}
+    if(formContext!= undefined){
+      this.window.postMessage("Xrm","CRM");
+    }
 );
