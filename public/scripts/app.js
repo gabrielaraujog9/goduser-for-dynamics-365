@@ -1,6 +1,10 @@
-import * as WebApiClient from 'xrm-webapi-client';
-WebApiClient.
-let Xrm = window.parent.Xrm == null ? window.parent.parent.Xrm : window.parent.Xrm;
-
-console.log(Xrm)
-console.log(Xrm._page)
+    var scriptInjetavel = document.createElement("script");
+    scriptInjetavel.id = "God_User_JS";
+    scriptInjetavel.src = chrome.runtime.getURL("scripts/Funcoes_God_User.js");
+    scriptInjetavel.onload= function(){
+        this.remove();
+    };
+    (document.head || document.documentElement).appendChild(scriptInjetavel);
+    // chrome.runtime.sendMessage({ message: "popup" }, function (response) {
+        
+    // });

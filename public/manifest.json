@@ -20,6 +20,24 @@
   ],
   "host_permissions": [
     "*://*.dynamics.com/api/*",
-    "*://*.dynamics.com.mcas.ms/*"
+    "*://*.dynamics.com.mcas.ms/*",
+    "https://*.crm.dynamics.com/*"
+  ],
+   "permissions": [
+    "scripting",
+    "storage",
+    "activeTab",
+    "declarativeNetRequest"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/scripts/app.js",
+        "/scripts/Funcoes_God_User.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
   ]
 }
