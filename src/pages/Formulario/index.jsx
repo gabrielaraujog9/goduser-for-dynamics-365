@@ -3,18 +3,12 @@ import { ColumnButton } from "../../components/ColumnButton";
 import { Container } from "./styles";
 
 function Modo_Deus2(){
-  chrome.runtime.sendMessage({
-    category: "forms" || '',
-    type: "mododeus",
-  });
+  chrome.runtime.sendMessage("Hello World");
 }
 
 export function Formulario(){
   function Modo_Deus(){
-    chrome.runtime.sendMessage({
-      category: "forms" || '',
-      type: "mododeus",
-    });
+    chrome.runtime.sendMessage("Hello World");
   }
   return(
     <Container>

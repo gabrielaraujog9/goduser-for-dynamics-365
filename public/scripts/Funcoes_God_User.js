@@ -5,4 +5,5 @@ window.addEventListener('message',async function (event){
     if(formContext!= undefined){
       this.window.postMessage("Xrm","CRM");
     }
+}
 );
