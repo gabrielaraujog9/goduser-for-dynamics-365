@@ -1,6 +1,26 @@
-var formContext;
 window.addEventListener('message',async function (event){
-    formContext = event.source.Xrm?.Page;
-    console.log(event)
+    try{
+        console.log(event);
+    }
+    catch(erro){
+        console.error(erro);
+    }
   }
 );
+
+const Categorias = {
+    "Form":0,
+    "WebApi":1,
+    "Localizacao":2,
+    "Console":3
+};
+
+const Funcoes ={
+    "God_Mode":0,
+    "WorkFlows":1,
+    "NomesLogicos":2,
+    "LimparNomesLogicos":3,
+    "AbrirRegistro":4,
+    "UrlRegistro":5,
+    "CamposAtualizados":6
+};
