@@ -1,10 +1,11 @@
 export const Repositorio = {
     Mensagem: class{
         constructor(categoria, mensagem="", funcao, tab){
-        this.Categoria = categoria;
-        this.Mensagem = mensagem;
-        this.Funcao = funcao;
-        this.Tab = tab;
+            this.Mensagem_God_User = true; //Pra validar se foi a extensão que enviou a mensagem
+            this.Categoria = categoria;
+            this.Mensagem = mensagem;
+            this.Funcao = funcao;
+            this.Tab = tab;
         };
         Enviar = () => chrome.runtime.sendMessage(this);
     },
