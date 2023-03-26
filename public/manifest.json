@@ -24,13 +24,16 @@
   "host_permissions": [
     "*://*.dynamics.com/api/*",
     "*://*.dynamics.com.mcas.ms/*",
-    "https://*.crm.dynamics.com/*"
+    "https://*.crm.dynamics.com/*",
+    "https://*.crm2.dynamics.com/*",
+    "https://*.dynamics.com/*"
   ],
    "permissions": [
     "scripting",
     "storage",
     "activeTab",
-    "declarativeNetRequest"
+    "declarativeNetRequest",
+    "tabs"
   ],
   "web_accessible_resources": [
     {
