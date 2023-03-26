@@ -1,6 +1,10 @@
 window.addEventListener('message',async function (event){
     try{
-        console.log(event);
+        if(event?.data?.hasOwnProperty("Extensao") && event?.data?.Mensagem_God_User){
+            console.group("extensão");
+            console.log(event);
+            console.groupEnd();
+        }
     }
     catch(erro){
         console.error(erro);
