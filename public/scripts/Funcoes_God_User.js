@@ -12,13 +12,13 @@
 //   }
 // );
 
-chrome.runtime.onMessage.addListener(async function(event){
+chrome.runtime.onMessage.addListener(async function(event, sender, sendResponse){
     try{
         if(event?.hasOwnProperty("Mensagem_God_User") && event?.Mensagem_God_User){
             console.group("extensão");
             console.log(event);
             console.groupEnd();
-            return Promise.resolve({ response: "Hi from content script" });
+            sendResponse({ response: "Objeto chegou." });
         }
     }
     catch(erro){
