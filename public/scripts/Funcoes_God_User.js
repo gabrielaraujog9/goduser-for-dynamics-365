@@ -11,21 +11,24 @@
 //     }
 //   }
 // );
-
-chrome.runtime.onMessage.addListener(async function(event, sender, sendResponse){
+window.addEventListener('message',async function
+/*chrome.runtime.onMessage.addListener(async function*/(mensagem, sender, sendResponse){
     try{
         console.group("extensão");
+        var event = mensagem.data;
         if(event?.hasOwnProperty("Mensagem_God_User") && event?.Mensagem_God_User){
             console.log(event);
             switch(event.Funcao){
                 case Funcoes.AbrirRegistro:
                     console.log(Funcoes.Texto(Funcoes.AbrirRegistro));
+                    console.log(window.Xrm);
                     break;
                 case Funcoes.CamposAtualizados:
                     console.log(Funcoes.Texto(Funcoes.CamposAtualizados));
                     break;
                 case Funcoes.God_Mode:
                     console.log(Funcoes.Texto(Funcoes.God_Mode));
+                    console.log(window.Xrm);
                     break;
                 case Funcoes.LimparNomesLogicos:
                     console.log(Funcoes.Texto(Funcoes.LimparNomesLogicos));
