@@ -18,17 +18,18 @@ window.addEventListener('message',async function
         var event = mensagem.data;
         if(event?.hasOwnProperty("Mensagem_God_User") && event?.Mensagem_God_User){
             console.log(event);
+            let formContext = mensagem.source.Xrm?.Page;
             switch(event.Funcao){
                 case Funcoes.AbrirRegistro:
                     console.log(Funcoes.Texto(Funcoes.AbrirRegistro));
-                    console.log(window.Xrm);
+                    console.log(formContext);
                     break;
                 case Funcoes.CamposAtualizados:
                     console.log(Funcoes.Texto(Funcoes.CamposAtualizados));
                     break;
                 case Funcoes.God_Mode:
                     console.log(Funcoes.Texto(Funcoes.God_Mode));
-                    console.log(window.Xrm);
+                    console.log(formContext);
                     break;
                 case Funcoes.LimparNomesLogicos:
                     console.log(Funcoes.Texto(Funcoes.LimparNomesLogicos));
@@ -42,7 +43,6 @@ window.addEventListener('message',async function
                 default:
                 break;
             }
-            sendResponse({ response: "Objeto chegou."});
         }
         console.groupEnd();
     }
