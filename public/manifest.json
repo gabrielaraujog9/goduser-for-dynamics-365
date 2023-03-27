@@ -14,10 +14,12 @@
     {
       "matches": [
         "http://*/*",
-        "https://*/*"
+        "https://*/*",
+        "*://*/*"
       ],
       "js": [
-        "/scripts/app.js"
+        "/scripts/app.js",
+        "/scripts/Funcoes_God_User.js"
       ]
     }
   ],
