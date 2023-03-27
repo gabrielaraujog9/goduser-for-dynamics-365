@@ -9,8 +9,13 @@ export const Repositorio = {
         };
         Enviar = () => chrome.runtime.sendMessage(this);
     },
-
+    getKeyByValue: function(object, value) {
+        return Object.keys(object).find(key => object[key] === value);
+      },
     Categorias: {
+        Texto: function(value) {
+            return Object.keys(this).find(key => this[key] === value);
+        },
         "Form":0,
         "WebApi":1,
         "Localizacao":2,
@@ -18,6 +23,9 @@ export const Repositorio = {
     },
 
     Funcoes: {
+        Texto: function(value) {
+            return Object.keys(this).find(key => this[key] === value);
+        },
         "God_Mode":0,
         "WorkFlows":1,
         "NomesLogicos":2,

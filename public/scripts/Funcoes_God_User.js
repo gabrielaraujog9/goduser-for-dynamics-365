@@ -14,12 +14,34 @@
 
 chrome.runtime.onMessage.addListener(async function(event, sender, sendResponse){
     try{
+        console.group("extensão");
         if(event?.hasOwnProperty("Mensagem_God_User") && event?.Mensagem_God_User){
-            console.group("extensão");
             console.log(event);
-            console.groupEnd();
-            sendResponse({ response: "Objeto chegou." });
+            switch(event.Funcao){
+                case Funcoes.AbrirRegistro:
+                    console.log(Funcoes.Texto(Funcoes.AbrirRegistro));
+                    break;
+                case Funcoes.CamposAtualizados:
+                    console.log(Funcoes.Texto(Funcoes.CamposAtualizados));
+                    break;
+                case Funcoes.God_Mode:
+                    console.log(Funcoes.Texto(Funcoes.God_Mode));
+                    break;
+                case Funcoes.LimparNomesLogicos:
+                    console.log(Funcoes.Texto(Funcoes.LimparNomesLogicos));
+                    break;
+                case Funcoes.NomesLogicos:
+                    console.log(Funcoes.Texto(Funcoes.NomesLogicos));
+                    break;
+                case Funcoes.UrlRegistro:
+                    console.log(Funcoes.Texto(Funcoes.UrlRegistro));
+                    break;
+                default:
+                break;
+            }
+            sendResponse({ response: "Objeto chegou."});
         }
+        console.groupEnd();
     }
     catch(erro){
         console.error(erro);
@@ -27,6 +49,9 @@ chrome.runtime.onMessage.addListener(async function(event, sender, sendResponse)
 });
 
 const Categorias = {
+    Texto: function(value) {
+        return Object.keys(this).find(key => this[key] === value);
+    },
     "Form":0,
     "WebApi":1,
     "Localizacao":2,
@@ -34,6 +59,9 @@ const Categorias = {
 };
 
 const Funcoes ={
+    Texto: function(value) {
+        return Object.keys(this).find(key => this[key] === value);
+    },
     "God_Mode":0,
     "WorkFlows":1,
     "NomesLogicos":2,
