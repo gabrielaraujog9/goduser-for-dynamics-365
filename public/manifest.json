@@ -24,8 +24,6 @@
   "host_permissions": [
     "*://*.dynamics.com/api/*",
     "*://*.dynamics.com.mcas.ms/*",
-    "https://*.crm.dynamics.com/*",
-    "https://*.crm2.dynamics.com/*",
     "https://*.dynamics.com/*"
   ],
    "permissions": [

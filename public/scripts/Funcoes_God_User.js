@@ -1,6 +1,6 @@
 window.addEventListener('message',async function (event){
     try{
-        if(event?.data?.hasOwnProperty("Extensao") && event?.data?.Mensagem_God_User){
+        if(event?.data?.hasOwnProperty("Mensagem_God_User") && event?.data?.Mensagem_God_User){
             console.group("extensão");
             console.log(event);
             console.groupEnd();
