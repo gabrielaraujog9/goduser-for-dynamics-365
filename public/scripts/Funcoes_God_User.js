@@ -1,3 +1,4 @@
+import {FormularioRepository} from "../../src/repository/FormularioRepository";
 // window.addEventListener('message',async function (event){
 //     try{
 //         if(event?.data?.hasOwnProperty("Mensagem_God_User") && event?.data?.Mensagem_God_User){
@@ -11,8 +12,8 @@
 //     }
 //   }
 // );
-window.addEventListener('message',async function
-/*chrome.runtime.onMessage.addListener(async function*/(mensagem, sender, sendResponse){
+window.addEventListener('message',async function(mensagem, sender, sendResponse){
+/*chrome.runtime.onMessage.addListener(async function*/
     try{
         console.group("extensão");
         var event = mensagem.data;
