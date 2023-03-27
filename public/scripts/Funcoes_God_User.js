@@ -14,7 +14,7 @@
 
 chrome.runtime.onMessage.addListener(async function(event){
     try{
-        if(event?.hasOwnProperty("Mensagem_God_User") && event?.data?.Mensagem_God_User){
+        if(event?.hasOwnProperty("Mensagem_God_User") && event?.Mensagem_God_User){
             console.group("extensão");
             console.log(event);
             console.groupEnd();
