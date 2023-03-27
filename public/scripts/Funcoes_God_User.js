@@ -12,7 +12,8 @@
 //   }
 // );
 
-chrome.runtime.onMessage.addListener(async function(event, sender, sendResponse){
+//chrome.runtime.onMessage.addListener(async function(event, sender, sendResponse){
+window.addEventListener('message',async function (event, sender, sendResponse){
     try{
         console.group("extensão");
         if(event?.hasOwnProperty("Mensagem_God_User") && event?.Mensagem_God_User){
