@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // window.addEventListener('message',async function (event){
 //     try{
 //         if(event?.data?.hasOwnProperty("Mensagem_God_User") && event?.data?.Mensagem_God_User){
@@ -14,19 +15,27 @@
 
 //chrome.runtime.onMessage.addListener(async function(event, sender, sendResponse){
 window.addEventListener('message',async function (event, sender, sendResponse){
+=======
+import {FormularioRepository} from "../../src/repository/FormularioRepository";
+window.addEventListener('message',async function(mensagem, sender, sendResponse){
+>>>>>>> 04f3a86a5e3b0e79c8d353c43aafbae88913fd7b
     try{
-        console.group("extensão");
+        var event = mensagem.data;
         if(event?.hasOwnProperty("Mensagem_God_User") && event?.Mensagem_God_User){
-            console.log(event);
+            if(mensagem.origin !== this.location.origin && this.location.origin !== `${mensagem.origin}.mcas.ms`) return;
+            let formContext = mensagem.source.Xrm?.Page;
+            let xrm = mensagem.source.Xrm;
             switch(event.Funcao){
                 case Funcoes.AbrirRegistro:
                     console.log(Funcoes.Texto(Funcoes.AbrirRegistro));
+                    console.log(formContext);
                     break;
                 case Funcoes.CamposAtualizados:
                     console.log(Funcoes.Texto(Funcoes.CamposAtualizados));
                     break;
                 case Funcoes.God_Mode:
                     console.log(Funcoes.Texto(Funcoes.God_Mode));
+                    console.log(formContext);
                     break;
                 case Funcoes.LimparNomesLogicos:
                     console.log(Funcoes.Texto(Funcoes.LimparNomesLogicos));
@@ -40,7 +49,6 @@ window.addEventListener('message',async function (event, sender, sendResponse){
                 default:
                 break;
             }
-            sendResponse({ response: "Objeto chegou."});
         }
         console.groupEnd();
     }

@@ -1,13 +1,13 @@
 import { Button } from "../../components/Button";
 import { ColumnButton } from "../../components/ColumnButton";
 import { Container } from "./styles";
-import {Repositorio} from "../../scripts/Repositorio";
+import { Repositorio } from "../../repository/Repositorio";
 
 
 export function Formulario(){
   async function Modo_Deus(){
     var [tab] = await chrome.tabs.query({ currentWindow: true, active: true });
-    new Repositorio.Mensagem(Repositorio.Categorias.Console,"God_Mode",Repositorio.Funcoes.God_Mode, tab).Enviar();
+    new Repositorio.Mensagem(Repositorio.Categorias.Form,"God_Mode",Repositorio.Funcoes.God_Mode, tab).Enviar();
   }
   return(
     <Container>
