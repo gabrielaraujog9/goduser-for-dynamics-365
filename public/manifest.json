@@ -39,7 +39,8 @@
     {
       "resources": [
         "/scripts/app.js",
-        "/scripts/Funcoes_God_User.js"
+        "/scripts/Funcoes_God_User.js",
+        "/static/js/repository/*.js"
       ],
       "matches": [
         "<all_urls>"
