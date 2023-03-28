@@ -1,11 +1,8 @@
-import { ExtensaoRepository } from "../../src/repository/ExtensaoRepository";
-
-class App{
-  static start(){
-    InjecaoRepository.injetar(chrome.runtime.getURL("scripts/Funcoes_God_User.js"))
-  }
-}
-new App.start();
-// chrome.runtime.sendMessage({ message: "popup" }, function (response) {
-    
-// });
+var scriptInjetavel = document.createElement("script");
+scriptInjetavel.type = "module";
+scriptInjetavel.id = "God_User_JS";
+scriptInjetavel.src = chrome.runtime.getURL("scripts/Funcoes_God_User.js");
+scriptInjetavel.onload= function(){
+    this.remove();
+};
+(document.head || document.documentElement).appendChild(scriptInjetavel);
