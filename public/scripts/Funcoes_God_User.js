@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // window.addEventListener('message',async function (event){
 //     try{
 //         if(event?.data?.hasOwnProperty("Mensagem_God_User") && event?.data?.Mensagem_God_User){
@@ -14,11 +13,7 @@
 // );
 
 //chrome.runtime.onMessage.addListener(async function(event, sender, sendResponse){
-window.addEventListener('message',async function (event, sender, sendResponse){
-=======
-import {FormularioRepository} from "../../src/repository/FormularioRepository";
-window.addEventListener('message',async function(mensagem, sender, sendResponse){
->>>>>>> 04f3a86a5e3b0e79c8d353c43aafbae88913fd7b
+window.addEventListener('message',async function (mensagem, sender, sendResponse){
     try{
         var event = mensagem.data;
         if(event?.hasOwnProperty("Mensagem_God_User") && event?.Mensagem_God_User){
